@@ -11,6 +11,8 @@ import {
   IS_SHOW_BASKET,
   IS_PRODUCT_LOADING,
   IS_TAGS_LOADING,
+  SELECT_ALL_TAGS,
+  SELECT_ALL_COMPANY,
 } from "./types";
 
 const initialState = {
@@ -71,6 +73,12 @@ export default (state = initialState, action) => {
         selectedTags: modifiedSelectedTags,
       };
 
+    case SELECT_ALL_TAGS:
+      return {
+        ...state,
+        selectedTags: [{ id: 0, name: "All" }],
+      };
+
     case GET_COMPANIES:
       const { modifiedManufacturers, allDataManufacurerLength } =
         action.payload;
@@ -112,6 +120,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selectedCompanies: modifiedSelectedCompanies,
+      };
+
+    case SELECT_ALL_COMPANY:
+      return {
+        ...state,
+        selectedCompanies: [{ id: 0, name: "All" }],
       };
 
     case FILTER_BY_SORTING:

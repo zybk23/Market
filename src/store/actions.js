@@ -12,6 +12,8 @@ import {
   IS_SHOW_BASKET,
   IS_PRODUCT_LOADING,
   IS_TAGS_LOADING,
+  SELECT_ALL_TAGS,
+  SELECT_ALL_COMPANY,
 } from "./types";
 
 export const getAllProducts = () => {
@@ -201,5 +203,15 @@ export const decreaseProductPiece = (params) => {
 export const showBasketCard = () => {
   return (dispatch) => {
     dispatch({ type: IS_SHOW_BASKET });
+  };
+};
+export const selectAllTags = () => {
+  return (dispatch) => {
+    dispatch({ type: SELECT_ALL_TAGS });
+  };
+};
+export const selectAllCompanies = () => {
+  return (dispatch) => {
+    dispatch({ type: SELECT_ALL_COMPANY });
   };
 };
