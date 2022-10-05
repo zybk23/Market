@@ -18,7 +18,7 @@ const Header = () => {
   };
   return (
     <HeaderContainer>
-      <img src="images/Logo.png" alt="" />
+      <img data-testid="logoImg" datatest src="images/Logo.png" alt="" />
       <HeaderBasketContainer onClick={handleShowBasketCard}>
         <img src="images/basket.png" alt="" />
         <HeaderBasketText>₺ {basketTotalPrice.toFixed(2)}</HeaderBasketText>
